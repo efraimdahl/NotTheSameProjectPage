@@ -43,6 +43,7 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+
 </head>
 <body>
 
@@ -52,20 +53,20 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">Not The Same - Project Description</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Efraim Dahl</a><sup>*</sup>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Amber Koelfat</a><sup>*</sup>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Timofey Senchenko</a><sup>*</sup></span>
                   </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
+                    <span class="author-block">Utrecht University<br>AI Driven Content Generation - Johannes Pfau</span>
                     <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
                   </div>
 
@@ -76,23 +77,13 @@
                         <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
+                          <i class="far fa-file-video"></i>
                         </span>
-                        <span>Paper</span>
+                        <span>Video</span>
                       </a>
                     </span>
 
-                    <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
+                    
                   <!-- Github link -->
                   <span class="link-block">
                     <a href="https://github.com/YOUR REPO HERE" target="_blank"
@@ -103,16 +94,6 @@
                     <span>Code</span>
                   </a>
                 </span>
-
-                <!-- ArXiv abstract Link -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
               </span>
             </div>
           </div>
@@ -145,10 +126,11 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3">Introduction</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            In this report we will outline the steps we took to create "Not the Same", a music video created with extensive use of AI in collaborative interplay between us and various tools for content generation.
+            The report is broken down into two sections Music, and Video.  We will provide preliminary outputs and show how they influenced the next steps.
           </p>
         </div>
       </div>
@@ -156,6 +138,42 @@
   </div>
 </section>
 <!-- End paper abstract -->
+
+ <!-- Video carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Music</h2>
+      <h4 class="title is-3">Step 1: Building the basics </h4>
+      <p>
+        For the first part of the project we started with various symbolic music generators to generate melodic phrases and harmonic progressions. 
+        Symbolic music generators have been around for a while, especially procedural generation which predates computers, such as the <a href="https://en.wikipedia.org/wiki/Musikalisches_W%C3%BCrfelspiel">Musikalisches Würfelspiel</a>
+        (often falsley attributed to Mozart). Procedural generation of music is particularly tempting due to the abundance of formal structures in music, from large form structures such as Symphnies, Sonatas, and 12-bar blues, to small scale structures outlining i.e
+         <a href="https://en.wikipedia.org/wiki/Counterpoint">Counterpoint</a> or Voice Leading. AI-Driven generation of music found early success in 2016 in models such as <a href="https://github.com/Ghadjeres/DeepBach"> DeepBach</a>, that generated convincing 4 part chorales in the style of Bach, after being trained on about 400 original chorales.
+        Successes of the <a href="https://arxiv.org/abs/1706.03762">transformer</a> architecture in language generation/translation tasks has inspired a host of applications of the architecture to music generation, here symbolic music is broken down into tokens by 
+        tokenizers, i.e <a href="https://github.com/Natooz/MidiTok/tree/main">Midi Tok</a>, for an example of what a symbolic music tokenizer might encode, read the representation section<a href="https://magenta.tensorflow.org/performance-rnn">here</a>. The tokens can be used by the model, much like language tokens. 
+       The first model was the <a href="https://magenta.tensorflow.org/piano-transformer">Magenta Piano Transformer</a>. 
+      <section id="section3">
+        <midi-visualizer
+        id = "mainVisualizer"
+        src="static/midi/2349.mid">
+      </midi-visualizer>
+        <midi-player
+        id = "mainPlayer"
+        src="static/midi/2349.mid"
+        sound-font visualizer="#section3 midi-visualizer">
+      </midi-player>
+      
+      </section>
+
+      The first model we used was the <a href="https://github.com/salu133445/mmt?tab=readme-ov-file">Multi Track Music Transformer</a>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End video carousel -->
+
 
 
 <!-- Image carousel -->
@@ -221,38 +239,6 @@
 <!-- End youtube video -->
 
 
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
 
 
 
@@ -307,6 +293,7 @@
 <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
     <!-- End of Statcounter Code -->
+    <script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.5.0"></script>
 
   </body>
   </html>
