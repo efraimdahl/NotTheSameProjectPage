@@ -36,6 +36,22 @@ body {
 
 }
 
+.space-around{
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.triple-column{
+  flex: content;
+  flex-direction: row;
+  background-color: lightgray;
+  padding-top:3rem;
+  padding-bottom:3rem;
+  display:flex;
+  padding-left: 1rem;
+  padding-right:1rem;
+}
+
 .publication-banner video {
   position: relative;
   left: auto;
