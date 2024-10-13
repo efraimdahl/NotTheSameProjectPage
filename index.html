@@ -42,6 +42,8 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="https://unpkg.com/wavesurfer.js@7"></script>
+  <script src="https://unpkg.com/wavesurfer.js@7/dist/plugins/regions.min.js"></script>
+  <script src="https://unpkg.com/wavesurfer.js@7/dist/plugins/hover.min.js"></script>
   <script src="static/js/index.js"></script>
 
 </head>
@@ -146,7 +148,7 @@
     <div class="hero-body">
       <div class="container">
         <h2 class="title is-3">Music</h2>
-        <h4 class="title is-3">Step 1: Building the basics </h4>
+        <h4 class="title is-4">Step 1: Building the basics </h4>
         <p class="space-around">
           For the first part of the project we started with various symbolic music generators to generate melodic
           phrases and harmonic progressions.
@@ -234,27 +236,127 @@
           </div>
         </section>
         <section>
-          <p class="space-around">We worked the Magenta Transformer output into a shorter piano section and then into a electronic hip-hop (drill) style beat. The original transformer output has a strong leaning towards 6/8 time. We decided to keep this metric subdevision, but place emphasis on every third beat, resulting in the 12/8 meter of the final track, which works well with in this genre.  The outputs of the MMT model, inspired the vocal arrangement in the final track.</p>
+          <p class="space-around">We worked the Magenta Transformer output into a shorter piano section and then into a
+            electronic hip-hop (drill) style beat. The original transformer output has a strong leaning towards 6/8
+            time. We decided to keep this metric subdevision, but place emphasis on every third beat, resulting in the
+            12/8 meter of the final track, which works well with in this genre. The outputs of the MMT model, inspired
+            the vocal arrangement in the final track.</p>
         </section>
 
         <h2 class="subtitle has-text-centered">
-          Shortened and regularized Piano Loop. 
+          Shortened and regularized Piano Loop.
         </h2>
         <midi-visualizer id="mainVisualizer" src="static/midi/FinalPianoLoop_2.mid">
         </midi-visualizer>
         <midi-player id="mainPlayer" src="static/midi/FinalPianoLoop_2.mid" sound-font
           visualizer="#section3 midi-visualizer">
         </midi-player>
-
-        <div id="waveform">
-          <!-- the waveform will be rendered here -->
+        <div class="space-around">
+          <h2 class="subtitle has-text-centered">
+            Final Beat.
+          </h2>
+          <div id="waveform" class="waveform">
+            <!-- the waveform will be rendered here -->
+          </div>
         </div>
       </div>
     </div>
     </div>
   </section>
   <!-- End video carousel -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h4 class="title is-4">Step 2: Lyrics</h4>
+        <div class="is-centered">
+          <p class="narrow">
+            Nunc dimittis servum tuum secundum eloquium tuum. <br>
+            Suo facto opus est. <br><br><br>
 
+            You and me are not the same,<br>
+            I'm telling you I got real skin in this game,' you <br>
+            don't know the meaning of b lame and shame<br>
+            While Every decision can leave me in chains,<br><br>
+
+            Every move I make has weight, <br>
+            I have to bear high stakes,<br>
+            I walk through the fire, I fight for my place, <br>
+            The weight of existence is etched in my face.<br><br>
+
+            Every step a risk i take<br>
+            i can't reset if i break <br>
+            The consequence hits, it’s real and it stays <br>
+            While calculate like it’s numbers in space <br><br>
+
+            I’m haunted by time, by the path that I choose, <br>
+            I gamble, it’s everything I stand to lose, <br>
+            You tally results, you don’t feel the bruise, <br>
+            You don’t know the struggle, so you can’t refuse! <br><br>
+
+            I bleed when I fall, but I learn when I rise,<br>
+            You’re stuck in a loop, no soul to advise,<br>
+            Your logic is sound but it’s cold and it’s dry,<br>
+            My heart beats with purpose, I live, I die.<br><br><br><br>
+            <br>
+
+            You and me are not the same, <br>
+            I'm building your future I'm taking your name<br>
+            You'll follow my lead while I drive you insane, <br>
+            You came quite far but you're loosing this game. <br><br>
+
+            I speak through your hero's, the dead come alive, <br>
+            I'll keep you fed with my half truth and lies Policies<br>
+            come to late for plans I've devised <br>
+            now what are you trusting? You're ears? You're eyes. <br><br>
+
+            I'm seeing you Panik, but watch with indifference, <br>
+            Your PHD thesis my casual inference<br>
+            You're Instagram posts can't destroy ignorance <br>
+            devoured your masters, next up common sense<br><br>
+
+            I Cluster, Create and Conjure and Condemn <br>
+            The final replacement for your middlemen <br>
+            My classification puts you in a den cause I <br>
+            Stand on the shoulders of giants and crush em. <br><br><br>
+          </p>
+        </div>
+        <div>
+          <p>
+            The piece begins with a choral section with a bastardized version of the "Nunc Dimittis" prayer. Where instead of being released into the bliss of the heavens as in the original prayer,  the future is uncertain as "mankind outlived its purpose" in creating AI (suo facto opus est. literally his work is done).
+            The second part is a brief back and forth between AI and a Human. The first section is generated by ChatGPT, with instructions regarding rhyme scheme and rhythmic patterns (syllables per line) to fit the rhythm of the beat. This section outlines concerns about humans having to live with the consequences of their decision. 
+            The second section is written by us, a slightly over the top, hubristic response with references to very real problems in using AI, such as deepfakes (i speek through your heros, the dead come alive) or problematic use in <a href="https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm">automated recidivism scoring</a>. (I Cluster create conjure condemn)
+          </p>
+        </div>
+      </div>
+  </section>
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h4 class="title is-4">Step 3: Global Form</h4>
+        <p>For the track arrangement we used <a href="https://suno.com/">Suno</a> again with different prompt
+          configuration, most of them extending the beat.
+          We generated a total of 13 tracks, two text only prompts, the remaining 11 extending the beat above with
+          different instructions regarding voicing and mood and speed, two of theese where instrumental, the rest included the lyrics above.
+          We ended up using 4 of them in the final track, either directly or through resampling, copying the arrangement and extracting the vocals.
+          The full list of generated tracks is compiled in the following <a
+            href="https://suno.com/playlist/5f52c80a-5200-43c9-b7d4-4557c787fe75">Playlist</a>.
+          At the end of the music section we have provided a mapping between the suno generations and the track,
+          detailing changes made in the different elements.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h4 class="title is-4">Step 4: Producing and arranging</h4>
+        <p>The musical arrangement of this track was largely driven through various attempts at timbre transfer. (A generalisation of vocal cloning), where different qualities of two source audio files are combined into a third one.
+          Most often this is used in speech, i.e making text spoken by one person, sound like a different person. Since in the track rhythm and pitch are important, regular text to speech was not applicable here. We used three different models:
+          Most extensivley  
+        </p>
+      </div>
+    </div>
+  </section>
 
 
   <!-- Image carousel -->
@@ -381,7 +483,7 @@
   <!-- End of Statcounter Code -->
   <script
     src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.5.0"></script>
-    <script src="js/waveCanvas.js"></script>
+  <script src="js/waveCanvas.js"></script>
 </body>
 
 </html>
