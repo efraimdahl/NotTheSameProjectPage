@@ -41,6 +41,9 @@ body {
   padding-bottom: 3rem;
 }
 
+.wavform{
+  max-width: 600px;
+}
 .triple-column{
   flex: content;
   flex-direction: row;
@@ -50,6 +53,13 @@ body {
   display:flex;
   padding-left: 1rem;
   padding-right:1rem;
+}
+
+.narrow{
+  max-width: 600px;
+  width:600px;
+  margin:auto;
+  text-align: center;
 }
 
 .publication-banner video {

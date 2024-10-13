@@ -19,5 +19,26 @@ $(document).ready(function() {
 	
     bulmaSlider.attach();
 
-})
+	let wavesurferplaying = false
+	const wavesurfer = WaveSurfer.create({
+		container: '#waveform',
+		waveColor: '#4F4A85',
+		progressColor: '#383351',
+		url: './static/audio/OriginalBeat.mp3',
+		plugins: [
+			WaveSurfer.Hover.create({
+			  lineColor: '#000000',
+			  lineWidth: 2,
+			  labelColor: '#fff',
+			  labelSize: '11px',
+			}),
+		  ],
+	})
+		
+	wavesurfer.on('interaction', () => {
+		wavesurfer.playPause()
+	  })
+  
 
+
+})
