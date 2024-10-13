@@ -46,11 +46,11 @@ $(document).ready(function() {
 })
 
 function addTrackAudios(){
-	const wavesurfer = WaveSurfer.create({
+	const wavesurfer1 = WaveSurfer.create({
 		container: '#suno_piano',
-		waveColor: '#4F4A85',
-		progressColor: '#383351',
-		url: './static/audio/.mp3',
+		waveColor: '#ffd700',
+		progressColor: '#a78f04',
+		url: './static/audio/SunoPiano.mp3',
 		plugins: [
 			WaveSurfer.Hover.create({
 			  lineColor: '#000000',
@@ -60,6 +60,62 @@ function addTrackAudios(){
 			}),
 		  ],
 	})
+	wavesurfer1.on('interaction', () => {
+		wavesurfer1.playPause()
+	  })
+	const wavesurfer2 = WaveSurfer.create({
+		container: '#suno_orchestral',
+		waveColor: '#da00ab',
+		progressColor: '#a90586',
+		url: './static/audio/SunoOrchestral.mp3',
+		plugins: [
+			WaveSurfer.Hover.create({
+			  lineColor: '#000000',
+			  lineWidth: 2,
+			  labelColor: '#fff',
+			  labelSize: '11px',
+			}),
+		  ],
+	})
+	wavesurfer2.on('interaction', () => {
+		wavesurfer2.playPause()
+	  })
+
+	const wavesurfer3 = WaveSurfer.create({
+		container: '#suno_major',
+		waveColor: '#ffd700',
+		progressColor: '#a78f04',
+		url: './static/audio/SunoMajor.mp3',
+		plugins: [
+			WaveSurfer.Hover.create({
+			  lineColor: '#000000',
+			  lineWidth: 2,
+			  labelColor: '#fff',
+			  labelSize: '11px',
+			}),
+		  ],
+	})
+	wavesurfer3.on('interaction', () => {
+		wavesurfer3.playPause()
+	  })
+	
+	  const wavesurfer4 = WaveSurfer.create({
+		container: '#suno_rap',
+		waveColor: '#da00ab',
+		progressColor: '#a90586',
+		url: './static/audio/SunoRap.mp3',
+		plugins: [
+			WaveSurfer.Hover.create({
+			  lineColor: '#000000',
+			  lineWidth: 2,
+			  labelColor: '#fff',
+			  labelSize: '11px',
+			}),
+		  ],
+	})
+	wavesurfer4.on('interaction', () => {
+		wavesurfer4.playPause()
+	  })
 
 }
 

@@ -165,14 +165,14 @@
             DeepBach</a>, that generated convincing 4 part chorales in the style of Bach, after being trained on about
           400 original chorales.
           Successes of the <a href="https://arxiv.org/abs/1706.03762">transformer</a> architecture in language
-          generation/translation tasks has inspired a host of applications of the architecture to music generation, here
+          generation/translation tasks has inspired a host of applications of the architecture to music generation. Usually (and thats the case for the two models we are using here)
           symbolic music is broken down into tokens by
-          tokenizers, i.e <a href="https://github.com/Natooz/MidiTok/tree/main">Midi Tok</a>, for an example of what a
-          symbolic music tokenizer might encode, read the representation section<a
-            href="https://magenta.tensorflow.org/performance-rnn">here</a>. The tokens can be used by the model, much
+          tokenizers, i.e <a href="https://github.com/Natooz/MidiTok/tree/main">Midi Tok</a>. Such a tokenizer may create tokens for Note-On, Note-Off, Chords, Start of Song, End of Song. For an example of what a
+          more detailed overview of what a symbolic music tokenizer might encode, read the representation section<a
+            href="https://magenta.tensorflow.org/performance-rnn">here</a>. The tokens then can be used by the model, much
           like language tokens.
-          The first model was the <a href="https://magenta.tensorflow.org/piano-transformer">Magenta Piano
-            Transformer</a> with the following musical output (we generated several and this is the one we chose).
+          The first model we experimented with was the <a href="https://magenta.tensorflow.org/piano-transformer">Magenta Piano
+            Transformer</a>, we generated several outputs with the default settings and chose the following piece.
         <section id="section3">
           <midi-visualizer id="mainVisualizer" src="static/midi/OrigPiano.mid">
           </midi-visualizer>
@@ -351,10 +351,10 @@
             <a href="https://suno.com/song/5ef7bb9d-3da2-40e4-b4e2-7dbb10c73f46"> Suno Piano</a>
           </h2>
           <p>
-            We chose this track for its high quality rendition and alteration of the piano line.
+            We chose this track for its high quality rendition and alteration of the piano line, and slow decresecendo into an ambient very reverb heavy texture.
           </p>
         </div>
-        <div id="suno_piano">
+        <div id="suno_piano" class="side_audio">
           
         </div>
       </div>
@@ -364,10 +364,10 @@
           <a href="https://suno.com/song/886651a6-bbce-4c15-88ef-434816e72106"> Suno Major</a>
         </h2>
         <p>
-          In this extension the track modulates into the paralell major key, while keeping same piano melody played in minor, which creates an odd but interesting dissonance.
+          In this extension the track modulates into the paralell major key, while keeping same piano melody played in minor, which creates an interesting dissonance, which we decided to keep.
         </p>
       </div>
-        <div id="suno_major">
+        <div id="suno_major" class="side_audio">
         </div>
       </div>
       <div class = triple-column>
@@ -379,20 +379,20 @@
             This extension contains an orchestral rendition of the provided theme, fitting to the over the top lyrics of the second part, making for a good finale.
           </p>
         </div>
-        <div id="suno_orchestral">
+        <div id="suno_orchestral" class="side_audio">
           
         </div>
       </div>
       <div class = triple-column>
         <div>
           <h2 class="subtitle has-text-centered">
-            <a href="https://suno.com/song/2fa6dd58-b65f-420d-8671-4c42cab7b7fb"> Suno Orchestral</a>
+            <a href="https://suno.com/song/2fa6dd58-b65f-420d-8671-4c42cab7b7fb"> Suno Rap</a>
           </h2>
           <p>
-            This extension a good vocal flow, fast triples over a reduced version of the beat gradually building up. From this rendition we extracted the vocals and reproduced the generated arrangement.
+            This extension a good vocal flow, fast triples over a reduced version of the beat gradually building up. From this rendition we extracted the vocals using <a href="https://studio.gaudiolab.io/">Gaudio</a> and reproduced the generated arrangement.
           </p>
         </div>
-        <div id="suno_rap">
+        <div id="suno_rap" class="side_audio">
           
         </div>
       </div>
@@ -410,7 +410,7 @@
           Most extensivley we used the <a href = "https://github.com/Plachtaa/seed-vc/">following repository</a>, which developed a voice cloning system based on <a href="https://bytedancespeech.github.io/seedtts_tech_report/">SEED-TTS</a> an architecture and training paradigm proposed by ByteDance. 
           We built a <a href="https://gist.github.com/efraimdahl/2bb1bac315872cbcac9128a84b9f9ed0" >small inference pipeline</a>, automatically iterating through different target and reference audios and different inference depths and settings. (I.e using pitched (F0) vs unpitched model variation).
           We generated more than 100 different combinations, starting at low inference resolutions, and generating higher quality output for promising samples. 
-          Additionally we used two online services. The voice cloning service of the commercial platform<a href="https://elevenlabs.io/">Elevenlabs</a> and <a href="https://elf.tech/">Elf.tech</a>. A platform set up by <a href="https://en.wikipedia.org/wiki/Grimes">Grimes</a> an artist who embraced voice cloning technology early and makes her voice available for other producers through this platform, 
+          Additionally we used two online services. The voice cloning service of the commercial platform <a href="https://elevenlabs.io/">Elevenlabs</a> and <a href="https://elf.tech/"> Elf.tech</a>. Elf.tech is a platform set up by <a href="https://en.wikipedia.org/wiki/Grimes">Grimes</a> an artist who embraced voice cloning technology early and makes her voice available for other producers through this platform, 
           it even offers a distribution service for tracks created with the platform. 
           Below are some examples of timbre transferred snippets that we used in the final track. For the polyphonic examples (French Horn and Choir), the stems where seperated first and each voice transferred seperatly.
         </p>
