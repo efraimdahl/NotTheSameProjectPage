@@ -37,11 +37,31 @@ $(document).ready(function() {
 	wavesurfer.on('interaction', () => {
 		wavesurfer.playPause()
 	  })
-	
+	addTrackAudios()
 	addWaveform1()
 	addWaveform2()
 	addWaveform3()
+	addWaveform4()
+	addWaveform5()
 })
+
+function addTrackAudios(){
+	const wavesurfer = WaveSurfer.create({
+		container: '#suno_piano',
+		waveColor: '#4F4A85',
+		progressColor: '#383351',
+		url: './static/audio/.mp3',
+		plugins: [
+			WaveSurfer.Hover.create({
+			  lineColor: '#000000',
+			  lineWidth: 2,
+			  labelColor: '#fff',
+			  labelSize: '11px',
+			}),
+		  ],
+	})
+
+}
 
 function addWaveform1(){
 	const wavesurfer = WaveSurfer.create({
@@ -213,6 +233,109 @@ function addWaveform3(){
 		resize: false,
 
 	});
+	})
+	wavesurfer.on('interaction', () => {
+		wavesurfer.playPause();
+		
+	  })
+  
+
+}
+
+function addWaveform4(){
+	const wavesurfer = WaveSurfer.create({
+		container: '#waveform_verse2',
+		waveColor: '#56ff0e',
+		progressColor: '#38bb00',
+		url: './static/audio/Verse1_2.mp3',
+		plugins: [
+			WaveSurfer.Regions.create(),
+			WaveSurfer.Hover.create({
+				lineColor: '#000000',
+				lineWidth: 2,
+				labelColor: '#fff',
+				labelSize: '11px',
+			  }),
+			WaveSurfer.Spectrogram.create({
+				labels: false,
+				height: 200,
+				splitChannels: false,
+			  }),
+			
+
+		]
+	})
+	wavesurfer.on('ready',() =>{
+	wavesurfer.plugins[0].addRegion({
+		content: "Target: Suno Rapping",
+		start: 0, // start time in seconds
+		end: 6.5, // end time in seconds
+		color: '#38bb0031', // region color
+		drag: false,
+		resize: false,
+
+	});
+	wavesurfer.plugins[0].addRegion({
+		content: "Output: Elevenlabs (Will) rapping",
+		start: 6.6, // start time in seconds
+		end: 14, // end time in seconds
+		color: '#56ff0e31', // region color
+		drag: false,
+		resize: false,
+
+	});
+	
+	})
+	wavesurfer.on('interaction', () => {
+		wavesurfer.playPause();
+		
+	  })
+}
+
+
+function addWaveform5(){
+	const wavesurfer = WaveSurfer.create({
+		container: '#waveform_nunc',
+		waveColor: '#ff0000',
+		progressColor: '#ac0707',
+		url: './static/audio/Nunc.mp3',
+		plugins: [
+			WaveSurfer.Regions.create(),
+			WaveSurfer.Hover.create({
+				lineColor: '#000000',
+				lineWidth: 2,
+				labelColor: '#fff',
+				labelSize: '11px',
+			  }),
+			WaveSurfer.Spectrogram.create({
+				labels: false,
+				height: 200,
+				splitChannels: false,
+			  }),
+			
+
+		]
+	})
+	wavesurfer.on('ready',() =>{
+	wavesurfer.plugins[0].addRegion({
+		content: "Efraims (plural) singing",
+		start: 0, // start time in seconds
+		end: 11, // end time in seconds
+		color: '#ff000031', // region color
+		drag: false,
+		resize: false,
+
+	});
+	wavesurfer.plugins[0].addRegion({
+		content: "Output: Grimes (plural) singing",
+		start: 11.1, // start time in seconds
+		end: 22, // end time in seconds
+		color: '#ac070731', // region color
+		drag: false,
+		resize: false,
+
+	});
+	
 	})
 	wavesurfer.on('interaction', () => {
 		wavesurfer.playPause();
