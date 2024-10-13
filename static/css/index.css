@@ -68,6 +68,7 @@ body {
   top: auto;
   transform: none;
   object-fit: fit;
+  background-color: #a78f0431;
 }
 
 .publication-header .hero-body {

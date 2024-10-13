@@ -44,6 +44,8 @@
   <script src="https://unpkg.com/wavesurfer.js@7"></script>
   <script src="https://unpkg.com/wavesurfer.js@7/dist/plugins/regions.min.js"></script>
   <script src="https://unpkg.com/wavesurfer.js@7/dist/plugins/hover.min.js"></script>
+  <script src="https://unpkg.com/wavesurfer.js@7/dist/plugins/spectrogram.min.js"></script>
+
   <script src="static/js/index.js"></script>
 
 </head>
@@ -351,11 +353,34 @@
       <div class="container">
         <h4 class="title is-4">Step 4: Producing and arranging</h4>
         <p>The musical arrangement of this track was largely driven through various attempts at timbre transfer. (A generalisation of vocal cloning), where different qualities of two source audio files are combined into a third one.
-          Most often this is used in speech, i.e making text spoken by one person, sound like a different person. Since in the track rhythm and pitch are important, regular text to speech was not applicable here. We used three different models:
-          Most extensivley  
+          Most often this is used in speech, i.e making text spoken by one person, sound like a different person, also referred to as voice cloning. Since in the track rhythm and pitch are important, regular text to speech was not applicable here. We used three different models:
+          Most extensivley we used the <a href = "https://github.com/Plachtaa/seed-vc/">following repository</a>, which developed a voice cloning system based on <a href="https://bytedancespeech.github.io/seedtts_tech_report/">SEED-TTS</a> an architecture and training paradigm proposed by ByteDance. 
+          We built a <a href="https://gist.github.com/efraimdahl/2bb1bac315872cbcac9128a84b9f9ed0" >small inference pipeline</a>, automatically iterating through different target and reference audios and different inference depths and settings. (I.e using pitched vs unpitched model variation). 
+          Additionally we used two online services, the voice cloning service of the commercial platform<a href="https://elevenlabs.io/">Elevenlabs</a> and <a href="https://elf.tech/">Elf.tech</a>. A platform set up by <a href="https://en.wikipedia.org/wiki/Grimes">Grimes</a> an artist who embraced voice cloning technology early and makes her voice available for other producers through this platform, 
+          it even offers a distribution service for tracks created with the platform. 
+          Below are some examples of timbre transferred snippets that we used in the final track. For the polyphonic examples (French Horn and Choir), the stems where seperated first and each voice transferred seperatly.
         </p>
       </div>
     </div>
+    <h2 class="subtitle has-text-centered">
+      French Horn (Polyphonic): Seed-VC - 70 inference steps - F0 normalized
+    </h2>
+    <div id="waveform_horn" class="waveform">
+      <!-- the waveform will be rendered here -->
+    </div>
+    <div id="waveform_verse" class="waveform">
+      <!-- the waveform will be rendered here -->
+    </div>
+    <div id="waveform_woman" class="waveform">
+      <!-- the waveform will be rendered here -->
+    </div>
+    <div id="waveform_verse2" class="waveform">
+      <!-- the waveform will be rendered here -->
+    </div>
+    <div id="waveform_nunc" class="waveform">
+      <!-- the waveform will be rendered here -->
+    </div>
+
   </section>
 
 
