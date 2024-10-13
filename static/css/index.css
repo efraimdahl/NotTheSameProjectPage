@@ -41,8 +41,10 @@ body {
   padding-bottom: 3rem;
 }
 
-.wavform{
-  max-width: 600px;
+.waveform{
+  padding-left: 5rem;
+  padding-right:5rem;
+  padding-bottom: 2rem;
 }
 .triple-column{
   flex: content;
@@ -68,7 +70,12 @@ body {
   top: auto;
   transform: none;
   object-fit: fit;
-  background-color: #a78f0431;
+  background-color: #00749e;
+}
+
+.wavform{
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .publication-header .hero-body {
