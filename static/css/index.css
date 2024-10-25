@@ -31,6 +31,10 @@ body {
 .publication-title {
 }
 
+.title{
+  margin-top:10px;
+}
+
 .publication-banner {
   max-height: parent;
 

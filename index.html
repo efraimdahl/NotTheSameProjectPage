@@ -642,9 +642,32 @@
             By combining these components, our pipeline generates stylized videos that maintain the original motion while adopting the desired artistic style.
             
           </p>
-          <h4 class="title is-4">Pipeline Components</h4>
-          <h5 class="title is-8">ControlNet Modules</h5>
-          <img src="static/images/wf6.png"/>
+          <h2 class="title is-2">Pipeline Components</h2>
+          <h4 class="title is-4">ControlNet Modules</h4>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item">
+              <!-- Your image here -->
+              <img src="static/images/wf6.png" alt="ControlNetOverview" />
+
+              <h2 class="subtitle has-text-centered">
+                Overview of ControlNet Module Configuration
+              </h2>
+            </div>
+            <div class="item">
+              <!-- Your image here -->
+              <img src="static/images/wf8.png" alt="ControlNetOverview" />
+              <h2 class="subtitle has-text-centered">
+                ControlNet Modules Detail
+              </h2>
+            </div>
+            <div class="item">
+              <!-- Your image here -->
+              <img src="static/images/wf9.png" alt="Purple Hand in the sky" />
+              <h2 class="subtitle has-text-centered">
+                ControlNet Modules with input
+              </h2>
+            </div>
+          </div>
           <br>
           <p>We employed three ControlNet models, each serving a distinct purpose:          </p>
           <li>OpenPose ControlNet: Extracts pose information from the input frames to preserve the character's movements.</li>
@@ -652,76 +675,67 @@
           <li>HED Edge Detection ControlNet: Extracts edge information to retain fine details and outlines.</li>
           <br>
           <p>These models guide the generation process to ensure that the output frames closely match the structure and motion of the input video.</p>
-
-          <div id="results-carousel" class="carousel results-carousel">
-            <div class="item">
-              <!-- Your image here -->
-              <img src="static/images/sys1.png" alt="Female sysiphos pushuing the earth" />
-
-              <h2 class="subtitle has-text-centered">
-                Prompt A_1: Can you generate an image of a woman-sysiphus pushing a boulder up the mountain, but the
-                boulder is the planet earth? Around it are trees and such
-              </h2>
-            </div>
-            <div class="item">
-              <!-- Your image here -->
-              <img src="static/images/sys2.png" alt="Female sysiphos pushuing the earth" />
-              <h2 class="subtitle has-text-centered">
-                Prompt A_2: Can you regenerate it, with her way further away from our point of view?
-              </h2>
-            </div>
-            <div class="item">
-              <!-- Your image here -->
-              <img src="static/images/hand1.png" alt="Purple Hand in the sky" />
-              <h2 class="subtitle has-text-centered">
-                Prompt B_1: Large purple hand reaching down from a purple sky, only sky
-              </h2>
-            </div>
-            <div class="item">
-              <!-- Your image here -->
-              <img src="static/images/hand2.png" alt="Purple Hand in the sky" />
-              <h2 class="subtitle has-text-centered">
-                Prompt B_2: Make the hand look like it's pushing something invisible away
-              </h2>
-            </div>
-          </div>
-          <p>
-            We used theese images in combination with additional prompts to animate them using <a
-              href="https://lumalabs.ai/dream-machine">Luma Dreammachine</a>
+          <h4 class="title is-4">IPAdapter</h4>
+          <img src="static/images/ipadapt.png">
+          <p>The IPAdapter goal is to integrate the style of the reference image into the generation process, which it does to a certain extent.
           </p>
-          <div id="results-carousel" class="carousel results-carousel">
-            <div class="item">
-              <!-- Your image here -->
-              <video poster="" id="tree" controls muted loop height="100%">
-                <!-- Your video here -->
-                <source src="static/videos/video boulder.mp4" type="video/mp4">
-              </video>
-
-              <h2 class="subtitle has-text-centered">
-                Prompt A: Image A + A woman pushes the world up the mountain
-              </h2>
+          <h4 class="title is-4">AnimateDiffusion
+          </h4>
+          <p>AnimateDiffusion is used to model motion dynamics and ensure temporal consistency across frames. By incorporating a pre-trained motion model, it reduces flickering and maintains smooth transitions between adjacent frames.
+          </p>
+          <h4 class="title is-4">FreeU2
+          </h4>
+          <p>FreeU2 module enhances the overall image quality by refining details and reducing artifacts. It processes the generated frames to produce cleaner and more visually appealing results.
+          </p>
+          <h4 class="title is-4">Workflow Summary</h4>
+            <p style="color: #7f8c8d; font-size: 1em; text-align: center; margin-bottom: 30px;">
+              The initial workflow is inspired by <span style="color: #3498db; font-weight: bold;">reference original YouTube video</span>. The general flow of the data inputs is described below.
+            </p>
+        
+            <div style="margin-bottom: 20px;">
+              <h2 style="color: #7f8c8d; font-size: 1.3em; margin-bottom: 10px;">1. Input Video Frames</h2>
+              <p>Start by breaking down the input video into individual frames. To speed up the process for longer videos with less motion, we skip 1-2 frames, so we're processing every n-th frame.</p>
             </div>
-            <div class="item">
-              <!-- Your image here -->
-              <video poster="" id="tree" controls muted loop height="100%">
-                <!-- Your video here -->
-                <source src="static/videos/video hand.mp4" type="video/mp4">
-              </video>
-              <h2 class="subtitle has-text-centered">
-                Prompt B: Image B + The hand in the image reaching to grab the purple light
-              </h2>
+        
+            <div style="margin-bottom: 20px;">
+              <h2 style="color:  #7f8c8d; font-size: 1.3em; margin-bottom: 10px;">2. Extracting Key Details with ControlNets</h2>
+              <ul style="margin: 0; padding-left: 20px;">
+                <li><strong>Pose ControlNet:</strong> Captures the person’s pose to keep movements accurate.</li>
+                <li><strong>Depth ControlNet:</strong> Understands the depth in the scene to maintain spatial consistency.</li>
+                <li><strong>Edge ControlNet:</strong> Extracts edges and outlines to preserve details.</li>
+              </ul>
             </div>
-            <div class="item">
-              <!-- Your image here -->
-              <video poster="" id="tree" controls muted loop height="100%">
-                <!-- Your video here -->
-                <source src="static/videos/video orb.mp4" type="video/mp4">
-              </video>
-              <h2 class="subtitle has-text-centered">
-                Prompt C: (No image provided) A glowing purple magical orb on a black background
-              </h2>
+        
+            <div style="margin-bottom: 20px;">
+              <h2 style="color:  #7f8c8d; font-size: 1.3em; margin-bottom: 10px;">3. Preparing the Model with Prompts</h2>
+              <p>Clip modules for positive and negative prompts are used to guide the model’s generation in a certain preferred direction, specifying what to include and avoid.</p>
             </div>
-
+        
+            <div style="margin-bottom: 20px;">
+              <h2 style="color:  #7f8c8d; font-size: 1.3em; margin-bottom: 10px;">4. Blending the Style with IPAdapter</h2>
+              <p>Using the IPAdapter, we merge the style from our reference image into the model, so the output images have the desired artistic look.</p>
+            </div>
+        
+            <div style="margin-bottom: 20px;">
+              <h2 style="color:  #7f8c8d; font-size: 1.3em; margin-bottom: 10px;">5. Ensuring Smooth Motion with AnimateDiff</h2>
+              <p>AnimateDiffusion ensures movements between frames are smooth and consistent, reducing any flickering.</p>
+            </div>
+        
+            <div style="margin-bottom: 20px;">
+              <h2 style="color:  #7f8c8d; font-size: 1.3em; margin-bottom: 10px;">6. Generating the Stylized Frames</h2>
+              <p>With the output from previous modules, we use KSampler to generate the stylized frames based on the conditioned model and prompts.</p>
+            </div>
+        
+            <div style="margin-bottom: 20px;">
+              <h2 style="color:  #7f8c8d; font-size: 1.3em; margin-bottom: 10px;">7. Enhancing the Images with FreeU2</h2>
+              <p>After receiving outputs from KSampler, we apply FreeU2 to enhance the generated frames, making them clearer and more detailed.</p>
+            </div>
+        
+            <div style="margin-bottom: 20px;">
+              <h2 style="color:  #7f8c8d; font-size: 1.3em; margin-bottom: 10px;">8. Assembling the Final Video</h2>
+              <p>All processed frames are combined to create the final stylized video.</p>
+            </div>
+          <img src="static/images/wf2.png">
           </div>
         </div>
       </div>
