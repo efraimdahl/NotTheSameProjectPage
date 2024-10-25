@@ -43,6 +43,7 @@ $(document).ready(function() {
 	addWaveform3()
 	addWaveform4()
 	addWaveform5()
+	annotatefinal()
 })
 
 function addTrackAudios(){
@@ -183,8 +184,8 @@ function addWaveform1(){
 function addWaveform2(){
 	const wavesurfer_horn = WaveSurfer.create({
 		container: '#waveform_verse',
-		waveColor: '#da00ab',
-		progressColor: '#a90586',
+		waveColor: '#ffa500',
+		progressColor: '#bc7b04',
 		url: './static/audio/Verse1_1.mp3',
 		plugins: [
 			WaveSurfer.Regions.create(),
@@ -208,7 +209,7 @@ function addWaveform2(){
 		content: "Target: Suno Rapping",
 		start: 0, // start time in seconds
 		end: 6.6, // end time in seconds
-		color: '#da00ab31', // region color
+		color: '#ffa50031', // region color
 		drag: false,
 		resize: false,
 
@@ -217,7 +218,7 @@ function addWaveform2(){
 		content: "Reference: Abdou Rapping",
 		start: 6.7, // start time in seconds
 		end: 13.8, // end time in seconds
-		color: '#a9058631', // region color
+		color: '#bc7b0431', // region color
 		drag: false,
 		resize: false,
 
@@ -226,7 +227,7 @@ function addWaveform2(){
 		content: "Output: Abdou Rapping Verse 1",
 		start: 13.9, // start time in seconds
 		end: 20, // end time in seconds
-		color: '#da00ab31', // region color
+		color: '#ffa500b31', // region color
 		drag: false,
 		resize: false,
 
@@ -241,8 +242,8 @@ function addWaveform2(){
 function addWaveform3(){
 	const wavesurfer = WaveSurfer.create({
 		container: '#waveform_woman',
-		waveColor: '#00bbff',
-		progressColor: '#00749e',
+		waveColor: '#ff0000',
+		progressColor: '#ac0707',
 		url: './static/audio/NotTheSame.mp3',
 		plugins: [
 			WaveSurfer.Regions.create(),
@@ -266,7 +267,7 @@ function addWaveform3(){
 		content: "Target: Efraim rapping",
 		start: 0, // start time in seconds
 		end: 3.5, // end time in seconds
-		color: '#00bbff31', // region color
+		color: '#ff000031', // region color
 		drag: false,
 		resize: false,
 
@@ -275,7 +276,7 @@ function addWaveform3(){
 		content: "Reference: SampleMe speaking",
 		start: 3.6, // start time in seconds
 		end: 7.3, // end time in seconds
-		color: '#00749e31', // region color
+		color: '#ac070731', // region color
 		drag: false,
 		resize: false,
 
@@ -284,7 +285,7 @@ function addWaveform3(){
 		content: "SampleMe rapping",
 		start: 7.4, // start time in seconds
 		end: 20, // end time in seconds
-		color: '#00bbff31', // region color
+		color: '#ff000031', // region color
 		drag: false,
 		resize: false,
 
@@ -301,8 +302,8 @@ function addWaveform3(){
 function addWaveform4(){
 	const wavesurfer = WaveSurfer.create({
 		container: '#waveform_verse2',
-		waveColor: '#56ff0e',
-		progressColor: '#38bb00',
+		waveColor: '#ff0062',
+		progressColor: '#b40347',
 		url: './static/audio/Verse1_2.mp3',
 		plugins: [
 			WaveSurfer.Regions.create(),
@@ -326,7 +327,7 @@ function addWaveform4(){
 		content: "Target: Suno Rapping",
 		start: 0, // start time in seconds
 		end: 6.5, // end time in seconds
-		color: '#38bb0031', // region color
+		color: '#ff006231', // region color
 		drag: false,
 		resize: false,
 
@@ -335,7 +336,7 @@ function addWaveform4(){
 		content: "Output: Elevenlabs (Will) rapping",
 		start: 6.6, // start time in seconds
 		end: 14, // end time in seconds
-		color: '#56ff0e31', // region color
+		color: '#b4034731', // region color
 		drag: false,
 		resize: false,
 
@@ -352,8 +353,8 @@ function addWaveform4(){
 function addWaveform5(){
 	const wavesurfer = WaveSurfer.create({
 		container: '#waveform_nunc',
-		waveColor: '#ff0000',
-		progressColor: '#ac0707',
+		waveColor: '#ff00ff',
+		progressColor: '#ac07ff',
 		url: './static/audio/Nunc.mp3',
 		plugins: [
 			WaveSurfer.Regions.create(),
@@ -377,7 +378,7 @@ function addWaveform5(){
 		content: "Efraims (plural) singing",
 		start: 0, // start time in seconds
 		end: 11, // end time in seconds
-		color: '#ff000031', // region color
+		color: '#ff00ff31', // region color
 		drag: false,
 		resize: false,
 
@@ -386,7 +387,109 @@ function addWaveform5(){
 		content: "Output: Grimes (plural) singing",
 		start: 11.1, // start time in seconds
 		end: 22, // end time in seconds
-		color: '#ac070731', // region color
+		color: '#ac07ff31', // region color
+		drag: false,
+		resize: false,
+
+	});
+	
+	})
+	wavesurfer.on('interaction', () => {
+		wavesurfer.playPause();
+		
+	  })
+  
+
+}
+
+
+function annotatefinal(){
+	const wavesurfer = WaveSurfer.create({
+		container: '#finalsong',
+		waveColor: '#4800ff',
+		progressColor: '#23007a',
+		url: './static/audio/finalsong.mp3',
+		plugins: [
+			WaveSurfer.Regions.create(),
+			WaveSurfer.Hover.create({
+				lineColor: '#000000',
+				lineWidth: 2,
+				labelColor: '#fff',
+				labelSize: '11px',
+			  }),
+			WaveSurfer.Spectrogram.create({
+				labels: false,
+				height: 200,
+				splitChannels: false,
+			  }),
+			
+
+		]
+	})
+	wavesurfer.on('ready',() =>{
+	wavesurfer.plugins[0].addRegion({
+		content: "Suno Major resampled",
+		start: 0, // start time in seconds
+		end: 6, // end time in seconds
+		color: '#4800ff31', // region color
+		drag: false,
+		resize: false,
+
+	});
+
+	wavesurfer.plugins[0].addRegion({
+		content: "Suno Piano Resampled \n Efraim singing",
+		start: 7, // start time in seconds
+		end: 35, // end time in seconds
+		color: '#083dff6e', // region color
+		drag: false,
+		resize: false,
+
+	});
+
+	wavesurfer.plugins[0].addRegion({
+		content: "Suno Rap Recreated \n Suno Piano Resampled \n Layered Voice Swap",
+		start: 36, // start time in seconds
+		end: 85, // end time in seconds
+		color: '#089cff6e', // region color
+		drag: false,
+		resize: false,
+
+	});
+	wavesurfer.plugins[0].addRegion({
+		content: "Suno Major + Grimes Singing",
+		start: 86, // start time in seconds
+		end: 117, // end time in seconds
+		color: '#08fff36e', // region color
+		drag: false,
+		resize: false,
+
+	});
+
+	wavesurfer.plugins[0].addRegion({
+		content: "Crazy Voice Swap Layering + Jazzy FX",
+		start: 118, // start time in seconds
+		end: 130, // end time in seconds
+		color: '#ff000031', // region color
+		drag: false,
+		resize: false,
+
+	});
+
+	wavesurfer.plugins[0].addRegion({
+		content: "Suno Rap + Fx",
+		start: 131, // start time in seconds
+		end: 146, // end time in seconds
+		color: '#08ffce6e', // region color
+		drag: false,
+		resize: false,
+
+	});
+	wavesurfer.plugins[0].addRegion({
+		content: "Suno Orchestral",
+		start: 147, // start time in seconds
+		end: 250, // end time in seconds
+		color: '#08ff7b6e', // region color
 		drag: false,
 		resize: false,
 
