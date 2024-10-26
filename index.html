@@ -9,7 +9,7 @@
   <meta property="og:title" content="Not The Same Project Page - Collaborative AI music video" />
   <meta property="og:description" content="Not The Same Project Page - Collaborative AI music video" />
   <meta property="og:url" content="https://efraimdahl.github.io/NotTheSameProjectPage/" />
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <!-- Path to banner image, should be in the path listed below. Optimal dimensions are 1200X630-->
   <meta property="og:image" content="static/image/grimesSequ.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -17,7 +17,7 @@
 
   <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
   <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <!-- Path to banner image, should be in the path listed below. Optimal dimensions are 1200X600-->
   <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
   <meta name="twitter:card" content="summary_large_image">
   <!-- Keywords for your paper to be indexed by-->
@@ -79,7 +79,7 @@
               <div class="publication-links">
                 <!-- Arxiv PDF link -->
                 <span class="link-block">
-                  <a href="https://www.youtube.com/watch?v=6VUHeif5fzw" target="_blank"
+                  <a href="#videoshow"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="far fa-file-video"></i>
@@ -123,7 +123,7 @@
             <p>
               In this report we will outline the steps we took to create "Not the Same", a music video created with
               extensive use of AI in collaborative interplay between us and various tools for content generation.
-              The report is broken down into two sections Music, and Video. We will provide preliminary outputs and show
+              The report is broken down into two sections <a style="text-decoration: underline;" href="#musicblock">Music</a> and <a style="text-decoration: underline;" href="#videoblock">Video</a>. We will provide preliminary outputs and show
               how they influenced the next steps.
             </p>
           </div>
@@ -133,7 +133,7 @@
   </section>
   <!-- End paper abstract -->
 
-  <section class="hero is-small">
+  <section class="hero is-small" id="musicblock">
     <div class="hero-body">
       <div class="container">
         <h2 class="title is-3">Music</h2>
@@ -144,10 +144,10 @@
           Symbolic music generators have been around for a while, especially procedural generation which predates
           computers, such as the <a href="https://en.wikipedia.org/wiki/Musikalisches_W%C3%BCrfelspiel">Musikalisches
             Würfelspiel</a>
-          (often falsley attributed to Mozart). Procedural generation of music is particularly tempting due to the
-          abundance of formal structures in music, from large form structures such as Symphnies, Sonatas, and 12-bar
+          (often falsely attributed to Mozart). Procedural generation of music is particularly tempting due to the
+          abundance of formal structures in music, from large form structures such as symphonies, sonatas, and 12-bar
           blues, to small scale structures outlining i.e
-          <a href="https://en.wikipedia.org/wiki/Counterpoint">Counterpoint</a> or Voice Leading. AI-Driven generation
+          <a href="https://en.wikipedia.org/wiki/Counterpoint">counterpoint</a> or voice leading. AI-Driven generation
           of music found early success in 2016 in models such as <a href="https://github.com/Ghadjeres/DeepBach">
             DeepBach</a>, that generated convincing 4 part chorales in the style of Bach, after being trained on about
           400 original chorales.
@@ -156,7 +156,7 @@
           Usually (and thats the case for the two models we are using here)
           symbolic music is broken down into tokens by
           tokenizers, i.e <a href="https://github.com/Natooz/MidiTok/tree/main">Midi Tok</a>. Such a tokenizer may
-          create tokens for Note-On, Note-Off, Chords, Start of Song, End of Song.
+          create tokens for different events such as: Note-On, Note-Off, Chords, Start of Song, End of Song.
           For a more detailed overview of what a symbolic music tokenizer might encode, read the representation
           section<a href="https://magenta.tensorflow.org/performance-rnn">here</a>. The tokens then can be used by the
           model, much
@@ -177,16 +177,16 @@
               href="https://github.com/salu133445/mmt?tab=readme-ov-file">Multi Track Music Transformer</a>
             There are different configurations and models available, trained on different datasets. We used the previous
             output as seeds for the subsequent generation.
-            We itereativley generated over 100 samples using different configurations of the seeds i.e chords only,
+            We iteratively generated over 100 samples using different configurations of the seeds i.e chords only,
             chords in choir instrumentation (i.e one line per instrument, this could be interesting since the model
             takes instrumentation into account),
             melody only, and the full seed. Additionally we used 4 different models, trained on the <a
               href="https://qsdfo.github.io/LOP/database.html">Symbolic orchestral database (SOD)</a> the <a
               href="https://qsdfo.github.io/LOP/database.html">Lakh MIDI Dataset</a>, where one model is trained on the
             full set (LMD_full) and one on a subset ((LMD)) and the <a href="https://symphonynet.github.io/">SymphonyNet
-              Dataset</a>
-            Additionally for each of theese configurations 4 types of outputs where generated with different behaviour
-            in resepect to the seed midi. 1) unconditioned (freely generated music, only a music start token is
+              Dataset.</a>
+            Additionally for each of these configurations 4 types of outputs where generated with different behaviour
+            in respect to the seed midi. 1) unconditioned (freely generated music, only a music start token is
             provided),
             2) instrument informed (the model knows what instruments are used in the seed), 3) 4-bar (4 bars of music
             are provided from which the model continues generating) and 4) 16- beats (16 beats are provided from which
@@ -263,9 +263,11 @@
         <h4 class="title is-4">Step 2: Lyrics</h4>
         <div class="is-centered">
           <p class="narrow">
+            Intro <br>
             Nunc dimittis servum tuum secundum eloquium tuum. <br>
             Suo facto opus est. <br><br><br>
-
+            
+            Verse 1 <br>
             You and me are not the same,<br>
             I'm telling you I got real skin in this game,' you <br>
             don't know the meaning of b lame and shame<br>
@@ -291,35 +293,35 @@
             Your logic is sound but it’s cold and it’s dry,<br>
             My heart beats with purpose, I live, I die.<br><br><br><br>
             <br>
-
+            Verse 2 <br>
             You and me are not the same, <br>
-            I'm building your future I'm taking your name<br>
+            I'm taking your future I'm taking your name<br>
             You'll follow my lead while I drive you insane, <br>
             You came quite far but you're loosing this game. <br><br>
 
             I speak through your hero's, the dead come alive, <br>
-            I'll keep you fed with my half truth and lies Policies<br>
-            come to late for plans I've devised <br>
-            now what are you trusting? You're ears? You're eyes. <br><br>
+            I'll keep you fed with my half truth and lies. <br>
+            Policies come to late for plans I've devised <br>
+            now what are you trusting? Your ears? Your eyes. <br><br>
 
-            I'm seeing you Panik, but watch with indifference, <br>
-            Your PHD thesis my casual inference<br>
-            You're Instagram posts can't destroy ignorance <br>
+            I'm seeing you panic, but watch with indifference, <br>
+            Your PHD thesis, my casual inference<br>
+            Your Instagram posts can't destroy ignorance <br>
             devoured your masters, next up common sense<br><br>
 
-            I Cluster, Create and Conjure and Condemn <br>
-            The final replacement for your middlemen <br>
+            I cluster, create and conjure and condemn <br>
+            the final replacement for your middlemen <br>
             My classification puts you in a den cause I <br>
-            Stand on the shoulders of giants and crush em. <br><br><br>
+            stand on the shoulders of giants and crush em. <br><br><br>
           </p>
         </div>
         <div>
           <p>
             The piece begins with a choral section: a bastardized version of the <a
-              href="https://en.wikipedia.org/wiki/Nunc_dimittis">"Nunc Dimittis"</a> a common eveing prayer. Instead of
+              href="https://en.wikipedia.org/wiki/Nunc_dimittis">"Nunc Dimittis"</a> a common latin evening prayer. Instead of
             being released into the bliss of the heavens as in the original prayer, the future is uncertain as "mankind
             outlived its purpose" in creating AI (suo facto opus est - his work is done).
-            The second part is a brief back and forth between AI and a Human. The first section is generated by <a
+            The second part is a brief back and forth between AI and a human. The first section is generated by <a
               href="https://chatgpt.com/"> ChatGPT </a>, with instructions regarding rhyme scheme and rhythmic patterns
             (syllables per line) to fit the rhythm of the beat. This section outlines concerns about humans having to
             live with the consequences of their decision.
@@ -327,8 +329,12 @@
             real problems in using AI, such as deepfakes: "I speak through your heros, the dead come alive" or
             problematic use in <a
               href="https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm">automated
-              recidivism scoring</a>. "I cluster create conjure condemn"
+              recidivism scoring</a>. "I cluster create and conjure and condemn"
           </p>
+          <p>ChatGPT prompt 1: I am writing a rap battle/dialog style song between a "Human" and an AI, with a recurring phrase "You and me are not the same" I want you to complete the following verse, that you sing as a human: "You and me are not the same, cause I got real skin in this game"</p>
+        </p>
+        <p>ChatGPT prompt 2: Lets focus the verse more on the consequences of being alive and acting in the world.</p>
+        <p>ChatGPT prompt 3: It needs to have more syllables per verse. Here is what the human verse looks like just for word density. Keep the content similar to the previous output though: (followed by Verse 2)</p>
         </div>
       </div>
   </section>
@@ -355,8 +361,7 @@
             <a href="https://suno.com/song/5ef7bb9d-3da2-40e4-b4e2-7dbb10c73f46"> Suno Piano</a>
           </h2>
           <p>
-            We chose this track for its high quality rendition and alteration of the piano line, and slow decresecendo
-            into an ambient very reverb heavy texture.
+            We chose this track for its high quality rendition and alteration of the piano line. It slowly develops into a more ambient and reverb heavy texture, slowly loosing shape. 
           </p>
         </div>
         <div id="suno_piano" class="side_audio">
@@ -369,8 +374,8 @@
             <a href="https://suno.com/song/886651a6-bbce-4c15-88ef-434816e72106"> Suno Major</a>
           </h2>
           <p>
-            In this extension the track modulates into the paralell major key, while keeping same piano melody played in
-            minor, which creates an interesting dissonance, which we decided to keep.
+            In this extension the track modulates into the relative major key, while keeping same piano melody played in
+            minor. This creates an interesting dissonance, which we decided to keep.
           </p>
         </div>
         <div id="suno_major" class="side_audio">
@@ -420,13 +425,13 @@
           Most often this is used in speech, i.e making text spoken by one person, sound like a different person, also
           referred to as voice cloning. Since in the track rhythm and pitch are important, regular text to speech was
           not applicable here. We used three different models:
-          Most extensivley we used the <a href="https://github.com/Plachtaa/seed-vc/">following repository</a>, which
+          Most extensively we used the <a href="https://github.com/Plachtaa/seed-vc/">following repository</a>, which
           developed a voice cloning system based on <a
             href="https://bytedancespeech.github.io/seedtts_tech_report/">SEED-TTS</a> an architecture and training
           paradigm proposed by ByteDance.
           We built a <a href="https://gist.github.com/efraimdahl/2bb1bac315872cbcac9128a84b9f9ed0">small inference
             pipeline</a>, automatically iterating through different target and reference audios and different inference
-          depths and settings. (I.e using pitched (F0) vs unpitched model variations).
+          depths and settings. (I.e using pitched (F0-normalized) vs unpitched model variations).
           We generated more than 100 different combinations, starting at low inference resolutions, and generating
           higher quality output for promising samples.
           Additionally we used two online services: The voice cloning service of the commercial platform <a
@@ -435,7 +440,7 @@
           cloning technology early and makes her voice available for other producers through this platform,
           it even offers a distribution service for tracks created here.
           Below are some examples of timbre transferred snippets that we used in the final track. For the polyphonic
-          examples (French Horn and Choir), the stems where seperated first and each voice transferred seperatly.
+          examples (French Horn and Choir), the stems where separated first and each voice transferred separately.
         </p>
       </div>
     </div>
@@ -485,7 +490,7 @@
     </div>
 
 
-    <section class="hero is-small">
+    <section class="hero is-small" id="videoblock">
       <div class="hero-body">
         <div class="container">
           <h2 class="title is-3">Video</h2>
@@ -514,21 +519,25 @@
           <h4 class="title is-4">The Story</h4>
           <img src="static/images/storyboard.png">
           <p>In our initial idea for making the video, we did not intend to create a full-fledged story with a plot, but rather an array of themes and visualizations to accompany the music. However, as the project progressed we decided to create a more consistent narrative: 
+          <br>
           </p>
           <p style="font-style:italic">
             A human, day after day pushes the globe up a mountain. Each evening, just as the summit nears, the world slips from her grasp and tumbles back to the foot, leaving her weary and desperate. She dreams of release, of something—anything—to ease this task.
-            <br>
+            <br><br>
+
             One evening, after another long day of hopeless struggle, a shimmering purple orb descends from the sky. It hovers before her and grants her a gift: a magnificent pair of wings. With the world now bound to her waist, she soars into the sky, the mountain beneath her just a memory.
-            <br>
+            <br><br>
             She flies higher and higher, weightless and free, until the immortal being who bestowed this power stirs from the clouds above. The being, ancient and wise, watches her ascent, its voice like the wind, reminding her of her fleeting humanity. “Mortal you are,” it murmurs, “and mortal you shall remain.”
-            <br>
+            <br><br>
             Before she can speak, a brilliant flash of light blinds her. In an instant, she is falling, plummeting through the skies, the wind screaming in her ears. Down, down she spirals until the earth disappears and a vast, purple sea swallows her whole. The waves ripple, and she is no more.
-            <br>
+            <br><br>
             And now, the being cradles the world in its hands, the weight that once belonged to her resting softly in its eternal grasp.
           </p>
           <p>
             This story is to be visualized by a combination of human work with various generative AI tools. In the following sections, we will elaborate on the technical visualization process, as well as give an analysis of the choices made in the final product.
-            </p>
+            <br>  
+          </p>
+          <p> ChatGPT prompt: Can you edit my text to make it a bit more whimsical and poetic? + Description of the story board</p>
         </div>
       </div>
     </section>
@@ -616,7 +625,7 @@
             <h4 class="title is-4">Filming</h4>
   
             <p>We filmed parts of the video ourselves over the course of 3 days. Doing so allowed us more control over the material and the narrative of parts of our end product. By using video style transfer we could then still adjust the style of the footage to be consistent with the rest of the video. All material on these days was shot on a Canon EOS 700D DSLR camera. 
-              We tried out various camera angles and movements in combination with the style transfer to see which parts worked best.  In case the style transfer failed, we still wanted our footage to be usable, so we filmed with different backgrounds. 
+              We tried out various camera angles and movements in combination with the style transfer to see which parts worked best.  In case the style transfer failed, we still wanted our footage to be usable, so we filmed with appropriate backgrounds in and around Oog-En-Al Park. 
               Additionally, we took some background footage of plants, moss and water, that made their way into the video as fillers.             
             </p>
           </div>
@@ -647,7 +656,7 @@
             <a href="https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved">AnimateDiffusion</a>: Ensures temporal consistency across frames by modeling motion dynamics.
           </li>
           <li>
-            FreeU2: Enhances image quality by refining details and reducing artifacts.
+            <a href="https://comfy.icu/node/FreeU_V2-Advanced"> FreeU2</a>: Enhances image quality by refining details and reducing artifacts.
           </li>
         <br>
             By combining these components, our pipeline generates stylized videos that maintain the original motion while adopting the desired artistic style.
@@ -700,7 +709,7 @@
           </p>
           <h4 class="title is-4">Workflow Summary</h4>
             <p style="color: #7f8c8d; font-size: 1em; text-align: center; margin-bottom: 30px;">
-              The initial workflow is inspired by <span style="color: #3498db; font-weight: bold;">reference original YouTube video</span>. The general flow of the data inputs is described below.
+              The initial workflow is inspired by <a href="https://drive.google.com/file/d/1Ph3S_x7J-G9Njl2Ahy36-DxD2ne_znbc/view?usp=sharing">this template </a>. The general flow of the data inputs is described below.
             </p>
         
             <div style="margin-bottom: 20px;">
@@ -747,11 +756,12 @@
               <p>All processed frames are combined to create the final stylized video.</p>
             </div>
           <img src="static/images/wf2.png">
+          <p>
+            In addition to our custom ComfyUI setup, we also used <a href="lensgo.ai">Lensgo.ai</a> for some of the sections compute time was running out.
+          </p>
           </div>
         </div>
-        <p>
-          In addition to our custom ComfyUI setup, we also used <a href="lensgo.ai">Lensgo.ai</a> for some of the sections compute time was running out.
-        </p>
+        
       </div>
     </section>
 
@@ -770,7 +780,7 @@
               </video>
 
               <h2 class="subtitle has-text-centered">
-                Original Video for the Atlas Sequence
+                Input (Amber dancing) 
               </h2>
             </div>
             <div class="item">
@@ -790,7 +800,7 @@
                 <source src="static/videos/icarus1_sequence.mp4" type="video/mp4">
               </video>
               <h2 class="subtitle has-text-centered">
-                Input
+                Input (Amber dancing)
               </h2>
             </div>
             <div class="item">
@@ -817,20 +827,20 @@
               <!-- Your image here -->
               <video poster="" id="tree" controls muted loop height="100%">
                 <!-- Your video here -->
-                <source src="static/videos/Sys2_c.mp4" type="video/mp4">
+                <source src="static/videos/Sys2.mp4" type="video/mp4">
               </video>
               <h2 class="subtitle has-text-centered">
-                Input
+                Input (Amber stretching)
               </h2>
             </div>
             <div class="item">
               <!-- Your image here -->
               <video poster="" id="tree" controls muted loop height="100%">
                 <!-- Your video here -->
-                <source src="static/videos/Sys2.mp4" type="video/mp4">
+                <source src="static/videos/Sys2_c.mp4" type="video/mp4">
               </video>
               <h2 class="subtitle has-text-centered">
-                Output (Lensgo.ai) - Ghibli Style, Emotional, Woman, Purple Hair, Stretching
+                Output (Lensgo.ai) - Ghibli Style (with image attached), Emotional, Woman, Purple Hair, Stretching
               </h2>
             </div>
       
@@ -920,16 +930,6 @@
             </div>
             <div class="expdiv">
               <!-- Your image here -->
-              <img src="static/images/Icarus2.png" alt="Woman from back" />
-              <h2 class="subtitle has-text-centered">
-                The Icarus sequence part 2 - 2:30 - 3:14
-              </h2>
-              <p>
-                The human flies high up into the sky with the earth. The AI however decides to make the human aware of her own mortality and blinds her, leading her to plummet into the now purple ocean. AI has taken over the world and humans alike, quite literally holding the world in its hand. The purple flower remains glowing, yet is the only plant left alive. 
-              </p>
-            </div>
-            <div class="expdiv">
-              <!-- Your image here -->
               <img src="static/images/color-progression.JPG" alt="Green mixed violet" />
               <h2 class="subtitle has-text-centered">
                 Colors
@@ -966,7 +966,7 @@
 
 
     <!-- Youtube video -->
-    <section class="hero is-small is-light">
+    <section class="hero is-small is-light" id="videoshow">
       <div class="hero-body">
         <div class="container">
           <!-- Paper video. -->
@@ -976,7 +976,7 @@
 
               <div class="publication-video">
                 <!-- Youtube embed code here -->
-                <iframe src="https://youtu.be/6VUHeif5fzw?si=pgG7FTGucETgL7Ht" frameborder="0"
+                <iframe src="https://www.youtube.com/embed/6VUHeif5fzw?si=5KHXjDx77HZlZCvi" frameborder="0"
                   allow="autoplay; encrypted-media" allowfullscreen></iframe>
               </div>
             </div>
@@ -999,8 +999,8 @@
         <div class="container">
           <h2 class="title">Task Devision</h2>
 
-          <p>Efraim Dahl - Everything Music and Sound (Music Generation, Timbre Transfer, Production), Project Page, Cameraman</p>
-          <p>Amber Koelfat - Video Director, Editor, Image + Video Generation, Story+Analysis</p>
+          <p>Efraim Dahl - Everything Music and Sound (Music Generation, Timbre Transfer, Singing, Lyrics, Production), Project Page, Cameraman</p>
+          <p>Amber Koelfat - Video Director, Editor, Image + Video Generation, Story+Analysis, Dancing, Choreography</p>
           <p>Timofey Senchenko - Image + Video Generation, Video Style Transfer - Comfy UI Workflow, Cloud Computation Setup</p>
 
         </div>
@@ -1021,8 +1021,10 @@
               </p>
               <p>
                 Attributions:<br> 
+                Abdou: Abdou aka Mathiavelly, is a friend and collaborator of Efraim from Dakar, Senegal. Check out his <a href="https://www.youtube.com/@capsiboymathiavelly">Youtube Channel</a><br>
                 Dark Spoken Word Female Vocal Sample by Sample_Me -- https://freesound.org/s/610048/ --
                 License: Creative Commons 0<br>
+                Ode to Joy Horn Sample: Utah Symphony Associate Principal Horn Edmund Rollett,  https://www.youtube.com/watch?v=HuxANPsnFoE<br>
 
               </p>
               

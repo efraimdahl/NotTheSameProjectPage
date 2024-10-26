@@ -72,14 +72,15 @@ body {
   background-color: rgb(230, 230, 230);
   padding-top:3rem;
   padding-bottom:3rem;
-  display:flex;
-  padding-left: 1rem;
   padding-right:1rem;
+  padding-left:1rem;
+  display:flex;
+  max-width:800px;
+  margin-left:auto;
+  margin-right:auto;
 }
 .side_audio{
-  min-width: 300px;
-  margin-left:2rem;
-  margin-right:2rem;
+  min-width: 400px;
 }
 
 .narrow{
