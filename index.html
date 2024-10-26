@@ -5,12 +5,12 @@
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" />
-  <meta property="og:url" content="URL OF THE WEBSITE" />
+  <meta name="description" content="Not The Same Project Page - Collaborative AI music video">
+  <meta property="og:title" content="Not The Same Project Page - Collaborative AI music video" />
+  <meta property="og:description" content="Not The Same Project Page - Collaborative AI music video" />
+  <meta property="og:url" content="https://efraimdahl.github.io/NotTheSameProjectPage/" />
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image" content="static/image/grimesSequ.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
@@ -62,11 +62,11 @@
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Efraim Dahl</a><sup>*</sup>,</span>
+                <a href="https://efraimdahl.com/" target="_blank">Efraim Dahl</a><sup>*</sup>,</span>
               <span class="author-block">
-                <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Amber Koelfat</a><sup>*</sup>,</span>
+                <a href="https://www.linkedin.com/in/amber-koelfat-ba24aa307/" target="_blank">Amber Koelfat</a><sup>*</sup>,</span>
               <span class="author-block">
-                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Timofey Senchenko</a><sup>*</sup></span>
+                <a href="https://www.linkedin.com/in/timofey-senchenko-51356b1a9/?trk=public_profile_browsemap" target="_blank">Timofey Senchenko</a><sup>*</sup></span>
               </span>
             </div>
 
@@ -79,26 +79,13 @@
               <div class="publication-links">
                 <!-- Arxiv PDF link -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                  <a href="https://www.youtube.com/watch?v=6VUHeif5fzw" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="far fa-file-video"></i>
                     </span>
                     <span>Video</span>
                   </a>
-                </span>
-
-
-                <!-- Github link -->
-                <span class="link-block">
-                  <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
                 </span>
               </div>
             </div>
@@ -489,7 +476,7 @@
     <div class="hero-body">
       <div class="container">
         <h4 class="title is-4">Step 5: Putting it all together</h4>
-        <p>Check out (and listen to) the annotated final version of the track below.
+        <p>Check out (and listen to) the annotated final version of the track below. Mastered using <a href="https://www.bandlab.com/mastering">Bandlab</a> 
         </p>
       </div>
       <div id="finalsong">
@@ -521,7 +508,31 @@
         </div>
       </div>
     </section>
-
+    <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container">
+          <h4 class="title is-4">The Story</h4>
+          <img src="static/images/storyboard.png">
+          <p>In our initial idea for making the video, we did not intend to create a full-fledged story with a plot, but rather an array of themes and visualizations to accompany the music. However, as the project progressed we decided to create a more consistent narrative: 
+          </p>
+          <p style="font-style:italic">
+            A human, day after day pushes the globe up a mountain. Each evening, just as the summit nears, the world slips from her grasp and tumbles back to the foot, leaving her weary and desperate. She dreams of release, of something—anything—to ease this task.
+            <br>
+            One evening, after another long day of hopeless struggle, a shimmering purple orb descends from the sky. It hovers before her and grants her a gift: a magnificent pair of wings. With the world now bound to her waist, she soars into the sky, the mountain beneath her just a memory.
+            <br>
+            She flies higher and higher, weightless and free, until the immortal being who bestowed this power stirs from the clouds above. The being, ancient and wise, watches her ascent, its voice like the wind, reminding her of her fleeting humanity. “Mortal you are,” it murmurs, “and mortal you shall remain.”
+            <br>
+            Before she can speak, a brilliant flash of light blinds her. In an instant, she is falling, plummeting through the skies, the wind screaming in her ears. Down, down she spirals until the earth disappears and a vast, purple sea swallows her whole. The waves ripple, and she is no more.
+            <br>
+            And now, the being cradles the world in its hands, the weight that once belonged to her resting softly in its eternal grasp.
+          </p>
+          <p>
+            This story is to be visualized by a combination of human work with various generative AI tools. In the following sections, we will elaborate on the technical visualization process, as well as give an analysis of the choices made in the final product.
+            </p>
+        </div>
+      </div>
+    </section>
+    
     <section class="hero is-small">
       <div class="hero-body">
         <div class="container">
@@ -618,7 +629,7 @@
         <div class="container">
           <h4 class="title is-4">Style Transfer</h4>
 
-          <p>Here we will describe details of the video generation workflow we implemented using ComfyUI. Our pipeline applies style transfer to input video frames using various advanced neural network models and techniques, including multiple ControlNet modules, IPAdapter, AnimateDiffusion, and FreeU2. Below, we provide an overview of the workflow and a more in-depth explanation of each component and how they process the data.
+          <p>Here we will describe details of the <a href="https://drive.google.com/file/d/1Ph3S_x7J-G9Njl2Ahy36-DxD2ne_znbc/view?usp=sharing">video generation workflow we implemented</a> using <a href="https://github.com/comfyanonymous/ComfyUI">ComfyUI</a>. Our pipeline applies style transfer to input video frames using various advanced neural network models and techniques, including multiple ControlNet modules, IPAdapter, AnimateDiffusion, and FreeU2. Below, we provide an overview of the workflow and a more in-depth explanation of each component and how they process the data.
              
           </p>
           <h4 class="title is-4">Overview</h4>
@@ -627,13 +638,13 @@
           </p>
           <br>
           <li>
-            ControlNet Modules: Three separate ControlNet models are used to extract structural and motion information from the input video frames.
+            <a href="https://huggingface.co/webui/ControlNet-modules-safetensors">ControlNet Modules</a>: Three separate ControlNet models are used to extract structural and motion information from the input video frames.
           </li>
           <li>
-            IPAdapter: Integrates style features from the reference image into the generation process.
+            <a href="https://github.com/cubiq/ComfyUI_IPAdapter_plus">IPAdapter</a>: Integrates style features from the reference image into the generation process.
           </li>
           <li>
-            AnimateDiffusion: Ensures temporal consistency across frames by modeling motion dynamics.
+            <a href="https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved">AnimateDiffusion</a>: Ensures temporal consistency across frames by modeling motion dynamics.
           </li>
           <li>
             FreeU2: Enhances image quality by refining details and reducing artifacts.
@@ -789,7 +800,7 @@
                 <source src="static/videos/icarus-gen-v1.mp4" type="video/mp4">
               </video>
               <h2 class="subtitle has-text-centered">
-                Output from local model. 
+                Output (local model). 
               </h2>
             </div>
             <div class="item">
@@ -799,7 +810,27 @@
                 <source src="static/videos/icarus-gen-v2.mp4" type="video/mp4">
               </video>
               <h2 class="subtitle has-text-centered">
-                Second possible output from local model.
+                Second output (local model)
+              </h2>
+            </div>
+            <div class="item">
+              <!-- Your image here -->
+              <video poster="" id="tree" controls muted loop height="100%">
+                <!-- Your video here -->
+                <source src="static/videos/Sys2_c.mp4" type="video/mp4">
+              </video>
+              <h2 class="subtitle has-text-centered">
+                Input
+              </h2>
+            </div>
+            <div class="item">
+              <!-- Your image here -->
+              <video poster="" id="tree" controls muted loop height="100%">
+                <!-- Your video here -->
+                <source src="static/videos/Sys2.mp4" type="video/mp4">
+              </video>
+              <h2 class="subtitle has-text-centered">
+                Output (Lensgo.ai) - Ghibli Style, Emotional, Woman, Purple Hair, Stretching
               </h2>
             </div>
       
@@ -814,15 +845,120 @@
 
     <section class="hero is-small">
       <div class="hero-body">
-        <div class="container">
+        <div class="container expdiv">
           <h4 class="title is-2">Post Production</h4>
           <p>
             For the post-production of our music video, we utilized Adobe Premiere Pro as our primary editing platform. Central to this editing process was honoring the flow of the music. We tried to strike a balance between enhancing the musical elements as well as telling a narrative that, although aligned with the theme of the music, tells a slightly different story. Where the music tells the story of a battle between humans and AI, the video tells the story of the AI having a position of power over the humans, defeating them in the end. This balance was mostly upheld by editing in such a way that musical elements were underlined by for example switching between images on the beat, or highlighting key musical details by animating certain elements so that the focal point of the video aligned with those moments. This way we aimed to create a connection between auditory and visual components of the music video. 
 	Our editing process was mostly iterative. We started compiling images and videos before the entirety of the plot was decided on. This way we were able to adapt when we were not able to generate a certain fragment we had in mind or change the narrative slightly if the AI tools we were using generated something that was different from what we originally expected to work with. We believe that this dynamic process was integral to the final end product. Before we started working on the project we decided not to let the AI generate everything, but rather see how we can incorporate AI elements within our own creative process. This way we aimed to achieve true collaboration between ourselves and AI tools. 
           </p>
+          <img src="static/images/moreimgs.JPG" alt="atlas"/>
 
           <p>
           </p>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container">
+          <h4 class="title is-2">Analysis and Interpretation</h4>
+          <p>
+            In this section, we will provide an analysis of our video, to highlight individual components in detail, as well as narrative structure and stylistic choices. By breaking this down, we aim to explain how all these elements come together to convey the intended story, aesthetic and message. 
+            <br>
+            The music video is built up of five sequences, each telling a part of the full story. The overall story is a cautionary tale describing the journey of a human tired of their daily struggle, trusting in technology so much that it leads to their own demise. Essentially the video serves as a warning of responsible use of generative AI.
+          </p>
+          <div>
+            <div class="expdiv">
+              <!-- Your image here -->
+              <img src="static/images/atlas.png" alt="Globe" />
+
+              <h2 class="subtitle has-text-centered">
+                The Atlas Sequence 0:00 - 0:41
+              </h2>
+              <p>In this very first sequence, we are presented with a display of nature. The final element of this sequence is Atlas, the carrier of the world. This sequence serves as an introduction to elements that will be explored further in the next sequences, such as the purple flower, green nature, the world and Greek mythological figures.</p>
+            </div>
+            <div class="expdiv">
+              <!-- Your image here -->
+              <img src="static/images/sys_globe.png" alt="atlas" class="img2 "/>
+              <h2 class="subtitle has-text-centered">
+                The Sysiphus sequence - 0:41 - 1:25
+              </h2>
+              <p>The viewer is confronted with a representation of the human struggle. Everyday the human tries to push the world up the mountain and every day the world comes right back down. She grows frustrated with this process and wishes for something or someone to ease her struggle. "One must imagine Sisyphus happy" they say, yet this human, as many among us, does not wish to suffer and would take any chance at making life just that little bit easier. 
+              </p>
+            </div>
+            <div class="expdiv">
+              <!-- Your image here -->
+              <img src="static/images/grimesSequ.png" alt="Woman from back" />
+              <h2 class="subtitle has-text-centered">
+                The Grimes sequence - 1:25 - 1:56
+              </h2>
+              <p>Named after the featured singer, the Grimes sequence sees the human´s wish fulfilled. A magical glowing orb comes down to earth and the human is equally as intrigued as excited to take whatever the orb might bring. The purple orb here represents the gift of AI that is bestowed upon planet earth. 
+              </p>
+            </div>
+            <div class="expdiv">
+              <!-- Your image here -->
+              <img src="static/images/Icarus.png" alt="Woman from back" />
+              <h2 class="subtitle has-text-centered">
+                The Icarus sequence part 1 - 1:56 - 2:30
+
+              </h2>
+              <p>
+                The human undergoes a transformation as an effect of taking the purple orb. She grows wings and decides to tie the earth to a rope so she can take the earth up high in the sky. She prepares for takeoff. Her struggle is to be greatly diminished with this new tool. 
+              </p>
+            </div>
+            <div class="expdiv">
+              <!-- Your image here -->
+              <img src="static/images/Icarus2.png" alt="Woman from back" />
+              <h2 class="subtitle has-text-centered">
+                The Icarus sequence part 2 - 2:30 - 3:14
+              </h2>
+              <p>
+                The human flies high up into the sky with the earth. The AI however decides to make the human aware of her own mortality and blinds her, leading her to plummet into the now purple ocean. AI has taken over the world and humans alike, quite literally holding the world in its hand. The purple flower remains glowing, yet is the only plant left alive. 
+              </p>
+            </div>
+            <div class="expdiv">
+              <!-- Your image here -->
+              <img src="static/images/Icarus2.png" alt="Woman from back" />
+              <h2 class="subtitle has-text-centered">
+                The Icarus sequence part 2 - 2:30 - 3:14
+              </h2>
+              <p>
+                The human flies high up into the sky with the earth. The AI however decides to make the human aware of her own mortality and blinds her, leading her to plummet into the now purple ocean. AI has taken over the world and humans alike, quite literally holding the world in its hand. The purple flower remains glowing, yet is the only plant left alive. 
+              </p>
+            </div>
+            <div class="expdiv">
+              <!-- Your image here -->
+              <img src="static/images/color-progression.JPG" alt="Green mixed violet" />
+              <h2 class="subtitle has-text-centered">
+                Colors
+              </h2>
+              <p>
+                A main theme throughout the video is the use of color, as a way to visually juxtapose the natural to the AI. Throughout the course of the video, much of the visual elements turn from green to purple. This is one of the ways we represent the AI taking over. 
+              </p>
+            </div>
+            <div class="expdiv">
+              <!-- Your image here -->
+              <img src="static/images/flowers.JPG" alt="Flower" />
+              <h2 class="subtitle has-text-centered">
+                The Flower
+              </h2>
+              <p>
+                A recurring theme within the video is that of the purple flower. The purple flower represents the existence of AI within the natural world. It's a growing flower, blooming within the boundaries of the world humans live in as well. The lush green nature around it represents, as did the color green throughout the video, the thriving of nature and humans alike. The flower scene occurs three times throughout the video in total. The first two times we see it, the trees and plants around it are still blooming, AI exists safely within the boundaries of our world. The third time we see it though, AI has taken over and everything around the ever glowing purple flower has died. 
+              </p>
+            </div>
+            <div class="expdiv">
+              <!-- Your image here -->
+              <img src="static/images/globe.JPG" alt="Flower" />
+              <h2 class="subtitle has-text-centered">
+                The World
+              </h2>
+              <p>
+                The final recurring theme within the video is that of the world. It represents the responsibility that humans to handle the challenges of life.  Throughout the story, we see this daily human effort to do so. In the end humans loose control  in their efforts to relieve themselves of their toil
+                </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -834,13 +970,13 @@
       <div class="hero-body">
         <div class="container">
           <!-- Paper video. -->
-          <h2 class="title is-3">Video Presentation</h2>
+          <h2 class="title is-3">The Final Video</h2>
           <div class="columns is-centered has-text-centered">
             <div class="column is-four-fifths">
 
               <div class="publication-video">
                 <!-- Youtube embed code here -->
-                <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0"
+                <iframe src="https://youtu.be/6VUHeif5fzw?si=pgG7FTGucETgL7Ht" frameborder="0"
                   allow="autoplay; encrypted-media" allowfullscreen></iframe>
               </div>
             </div>
@@ -861,26 +997,16 @@
     <section class="hero is-small is-light">
       <div class="hero-body">
         <div class="container">
-          <h2 class="title">Poster</h2>
+          <h2 class="title">Task Devision</h2>
 
-          <iframe src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
+          <p>Efraim Dahl - Everything Music and Sound (Music Generation, Timbre Transfer, Production), Project Page, Cameraman</p>
+          <p>Amber Koelfat - Video Director, Editor, Image + Video Generation, Story+Analysis</p>
+          <p>Timofey Senchenko - Image + Video Generation, Video Style Transfer - Comfy UI Workflow, Cloud Computation Setup</p>
 
         </div>
       </div>
     </section>
-    <!--End paper poster -->
-
-
-    <!--BibTex citation -->
-    <section class="section" id="BibTeX">
-      <div class="container is-max-desktop content">
-        <h2 class="title">BibTeX</h2>
-        <pre><code>BibTex Code Here</code></pre>
-      </div>
-    </section>
-    <!--End BibTex citation -->
-
+    
 
     <footer class="footer">
       <div class="container">
@@ -894,9 +1020,12 @@
                   href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
               </p>
               <p>
-                Attributions: Dark Spoken Word Female Vocal Sample by Sample_Me -- https://freesound.org/s/610048/ --
-                License: Creative Commons 0
+                Attributions:<br> 
+                Dark Spoken Word Female Vocal Sample by Sample_Me -- https://freesound.org/s/610048/ --
+                License: Creative Commons 0<br>
+
               </p>
+              
 
             </div>
           </div>
